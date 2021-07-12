@@ -1,0 +1,260 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+{% block title %}{% endblock %}
+{% block content %}
+<head>
+
+<style>
+    *{margin: 0; padding:0;}
+    .form-wrap{width: 100;  padding: 40px 20px; box-sizing: border-box;
+    position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%); }
+
+    .box{width: 100;  padding: 40px 20px; box-sizing: border-box; border: 1;
+    position: fixed; left: 50%; top: 65%; transform: translate(-50%, -50%);}
+
+#hero .btn-get-started {
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 28px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 10px;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+#hero .btn-get-started:hover {
+  background: #2dc997;
+  border: 2px solid #2dc997;
+}
+
+#hero .btn-get-start {
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 28px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 10px;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+#hero .btn-get-start:hover {
+  background: #2dc997;
+  border: 2px solid #2dc997;
+}
+
+/*---------------Model------------*/
+.close{
+    position: absolute;
+    right: 1rem;
+    top: 2rem;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--color-gray);
+    font-size: 2rem;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  .modal-title{
+    font-family: 'Times New Roman', Times, serif;
+  }
+  .modal-body{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  .btn-warning {
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 28px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 10px;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.btn-warning:hover {
+  background: #2dc997;
+  border: 2px solid #2dc997;
+}
+
+
+.modal__btn {
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 28px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 10px;
+  background-color: #2dc99800;
+  border: 2px solid rgb(8, 8, 8);
+  color:rgb(10, 10, 10);
+}
+
+.modal__btn:hover,
+.modal__btn:focus {
+  background: #2dc997;
+  border: 2px solid #2dc997;
+  color:#fff
+}
+
+
+</style>
+</head>
+<body>
+    <section id="hero">
+        <form class="form-wrap">
+            <a href="" class="btn-get-started" data-toggle="modal" data-target="#myModal">&#128449;Create Data Set</a>
+            <a href="/recognition" class="btn-get-start">Recognize Face</a>
+        </form>
+        <div>
+            <form class="box">
+              
+            </form>
+        </div>
+    </section>
+    <section id="about">
+      <div id="overviews" class="section lb">
+            <div class="container">
+                <div class="section-title row text-center">
+                    <div class="col-md-8 offset-md-2">
+                        <h3>About</h3>
+                        <p class="lead">Face recognition is one of the many wonders that AI research has 
+                          brought forward to the world. It is a subject of curiosity for many techies — who 
+                          would like to have a basic understanding of how things work. Let us take a dip into 
+                          the subject, to see how things work.</p>
+  
+                        <p class="lead">There are many secrets behind your face, the change of your love, 
+                          the situation of your health, the development of your wealth and the opportunity 
+                          of your career. After scanning your face, our Application will make a professional
+                           report for you according to your facial features.</p>
+                      </div>
+                </div><!-- end title -->
+            
+                <div class="row align-items-center">
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                        <div class="message-box">
+                            <h2 id="dataset">Dataset Creation</h2>
+                            <p>we can train our model to recognize faces in images and video streams
+                               we first need to gather the dataset of faces itself. If you are already using a pre-curated dataset, 
+                               such as Labeled Faces in the Wild (LFW), then the hard work is done for you.</p>
+                            
+                            <p> This process is typically referred to as facial recognition enrollment. We call it “enrollment” because
+                               we are “enrolling” and “registering” the user as an example person in our dataset and application.</p>
+                              
+                            <p>We will focus on the first step of the enrollment process: creating a custom dataset of example faces. 
+                              In the first step will use a webcam to (1) detect faces in a video stream and (2) save the example face images/frames to disk.</p>
+                            
+                        </div><!-- end messagebox -->
+                    </div><!-- end col -->
+            
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                        <div class="post-media wow fadeIn">
+                          <img src="{% static 'img/dataset.jpg' %}" alt="" class="img-fluid img-rounded">
+                        </div><!-- end media -->
+                    </div><!-- end col -->
+                </div>
+          <div class="row align-items-center">
+            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                        <div class="post-media wow fadeIn">
+                          <img src="{% static 'img/encode.jpg' %}" alt="" class="img-fluid img-rounded">
+                        </div><!-- end media -->
+                    </div><!-- end col -->
+            
+                    <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                        <div class="message-box">
+                            <h2 id="encoding">Training Dataset</h2>
+                            <p>To perform face recognition we need to train a face recognizer, using a pre labeled dataset.</p>
+    
+                            <p> We are initializing two lists. One for faces and other for names. We will be storing the 128 dimensions
+                               face encodings which we get from the face encoder from all the training images into the faces list and the
+                                corresding labels in the name list. Here we are also defining the trainpath which will contain the model
+                                 for the training images.</p>
+
+                            <p>Once we have got encodings for all the images thenTraining part has been completed. </p>     
+    
+                            
+                        </div><!-- end messagebox -->
+                    </div><!-- end col -->
+            
+                </div><!-- end row -->
+                <div class="row align-items-center">
+                  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                      <div class="message-box">
+                          <h2 id="recognize">Facial Recognition</h2>
+                          <p>For privacy reasons, personally identiﬁable information like age and
+                             gender of people is not available publicly. However accurate prediction
+                              of such information has important applications in the ﬁelds of advertising,
+                               forensics and business intelligence.</p>
+  
+                          <p> Computer vision researchers of ETH Zurich University (Switzerland) 
+                            announced a very successful apparent age and gender prediction models. </p>
+  
+                          
+                      </div><!-- end messagebox -->
+                  </div><!-- end col -->
+          
+                  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                      <div class="post-media wow fadeIn">
+                        <img src="{% static 'img/recognize.jpg' %}" alt="" class="img-fluid img-rounded">
+                      </div><!-- end media -->
+                  </div><!-- end col -->
+              </div>
+            </div><!-- end container -->
+        
+          </section>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close"  data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Enter Your Name and wait for webcam</h4>
+      </div>
+      <div class="modal-body">
+        <ul>
+          <li>For higher accuracy, make sure to stay in room with good lightning.</li>
+          <li>Please remove any type of accesories from face.</li>
+          <li>Make sure your face in clearly visible in camera.</li>
+          <li>Make sure your hair is not blocking the face.</li>
+          <li>Make sure no other faces are within the cam frame.</li>
+          <li>Click 'space' button 5 or 6 times to capture face.</li>
+          <li>After all click 'Esc' button to Escap</li>
+        </ul>
+        <hr/>
+        <form action="/create_dataset" method="POST">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="inputId">Enter Your Name*</label>
+            <input type="text" class="form-control" name="userName" id="inputName" placeholder="Enter Name" required>
+          </div>
+          <button type="submit" class="btn btn-warning">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+  
+</body>
+{% endblock %}

@@ -1,0 +1,62 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+{% block title %}{% endblock %}
+{% block content %}
+<head>
+ <style>
+   #recognize{width: 100vh;
+  height: 100vh;
+  background-size: cover;
+  position: relative;}
+  .btn-back {
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 28px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 10px;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.btn-back:hover {
+  background: rgb(54, 92, 204);
+  border: 2px solid #3a61d4;
+  
+}
+
+ </style>
+ 
+</head>
+<body>
+
+<section class="u-align-center u-clearfix u-palette-3-dark-3 u-section-1" id="carousel_a5fe">
+  <div class="u-clearfix u-sheet u-sheet-1">
+    <div class="u-clearfix u-expanded-width u-gutter-42 u-layout-wrap u-layout-wrap-1">
+      <div class="u-layout">
+        <div class="u-layout-row">
+          <div class="u-container-style u-layout-cell u-left-cell u-size-32-lg u-size-32-md u-size-32-sm u-size-32-xs u-size-35-xl u-layout-cell-1">
+            <div class="u-container-layout u-valign-middle-md u-valign-middle-sm u-valign-middle-xs">
+              <div class="u-border-16 u-border-palette-1-base u-shape u-shape-rectangle u-shape-1"></div>
+              <img class="u-image u-image-1" src="{% url 'facecam_feed' %}">
+            </div>
+          </div>
+          <div class="u-container-style u-layout-cell u-right-cell u-size-25-xl u-size-28-lg u-size-28-md u-size-28-sm u-size-28-xs u-layout-cell-2">
+            <div class="u-container-layout u-container-layout-2">
+              <h2 class="u-custom-font u-font-oswald u-text u-text-palette-1-base u-text-1">Real-Time Recognition</h2>
+              <p> face recognition algorithms identify facial features by extracting landmarks, or features, from an image of the subject's face. 
+                For example, an algorithm may analyze the relative position, size, and/or shape of the eyes, nose, cheekbones, and jaw.</p>
+              <a href="/recognition_home" class="btn-back">&#128408;Back</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+{% endblock %}      

@@ -1,0 +1,103 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+{% block title %}{% endblock %}
+{% block content %}
+
+  <!--==========================
+    Hero Section
+  ============================-->
+  <section id="hero">
+    <video playsinline autoplay muted loop poster="" id="bgvid">
+        <source src="{% static 'video/ScreenFlow-3.mp4' %}" type="video/mp4">
+  
+      </video>
+    <div class="hero-container">
+      <h1>Welcome to Regna</h1>
+      <h2>We Recognize Faces & Predict Age and Gender</h2>
+    <div>
+      <a href="/age_gender" class="btn-get-started">Age and Gender Prediction</a>
+      <a href="/recognition_home" class="btn-get-start">Face Recognition</a>
+    </div>
+    </div>
+    
+  </section><!-- #hero -->
+  <section id="about">
+    <div id="overviews" class="section lb">
+          <div class="container">
+              <div class="section-title row text-center">
+                  <div class="col-md-8 offset-md-2">
+                      <h3>About</h3>
+                      <p class="lead">Face recognition is one of the many wonders that AI research has 
+                        brought forward to the world. It is a subject of curiosity for many techies — who 
+                        would like to have a basic understanding of how things work. Let us take a dip into 
+                        the subject, to see how things work.</p>
+
+                      <p class="lead">There are many secrets behind your face, the change of your love, 
+                        the situation of your health, the development of your wealth and the opportunity 
+                        of your career. After scanning your face, our Application will make a professional
+                         report for you according to your facial features.</p>
+                    </div>
+              </div><!-- end title -->
+          
+              <div class="row align-items-center">
+                  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                      <div class="message-box">
+                          <h2>Predicting Age and Gender</h2>
+                          <p>For privacy reasons, personally identiﬁable information like age and
+                             gender of people is not available publicly. However accurate prediction
+                              of such information has important applications in the ﬁelds of advertising,
+                               forensics and business intelligence.</p>
+  
+                          <p> Computer vision researchers of ETH Zurich University (Switzerland) 
+                            announced a very successful apparent age and gender prediction models. </p>
+  
+                          
+                      </div><!-- end messagebox -->
+                  </div><!-- end col -->
+          
+          <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                      <div class="post-media wow fadeIn">
+                        <video playsinline autoplay muted loop poster="" class="img-fluid img-rounded">
+                          <source src="{% static 'video/detect.mp4' %}" type="video/mp4">
+                    
+                        </video>
+                      </div><!-- end media -->
+                  </div><!-- end col -->
+        </div>
+        <div class="row align-items-center">
+          <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                      <div class="post-media wow fadeIn">
+                        <video playsinline autoplay muted loop poster="" class="img-fluid img-rounded">
+                          <source src="{% static 'video/face.mp4' %}" type="video/mp4">
+                        </video>
+                      </div><!-- end media -->
+                  </div><!-- end col -->
+          
+          <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12">
+                      <div class="message-box">
+                          <h2>Real-Time Facial recognition</h2>
+                          <p>Automated facial recognition was pioneered in the 1960s. Woody
+                             Bledsoe, Helen Chan Wolf, and Charles Bisson worked on using the
+                              computer to recognize human faces. Their early facial recognition
+                               project was dubbed "man-machine" because the coordinates of the 
+                               facial features in a photograph had to be established by a human
+                                before they could be used by the computer for recognition.</p>
+  
+                          <p> Some face recognition algorithms identify facial features by extracting
+                             landmarks, or features, from an image of the subject's face. For example,
+                              an algorithm may analyze the relative position, size, and/or shape of the
+                               eyes, nose, cheekbones, and jaw. These features are then used to search for
+                                other images with matching features.</p>
+                      </div><!-- end messagebox -->
+                  </div><!-- end col -->
+          
+              </div><!-- end row -->
+          </div><!-- end container -->
+      
+  </section>
+
+  
+
+  
+    {% endblock %}
